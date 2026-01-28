@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: acr-push-tui
+Version: 0.1.0
+Summary: Textual TUI for building and pushing Docker images to Azure Container Registry.
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic-settings==2.2.1
+Requires-Dist: rich==13.7.1
+Requires-Dist: textual==0.59.0
+Requires-Dist: typer==0.12.3
+
+# acr-push-tui
+
+Textual TUI for building and pushing Docker images to Azure Container Registry.
+
+## Setup
+
+Install dependencies with uv:
+
+```
+uv sync
+```
+
+Run the TUI:
+
+```
+acr-push-tui run
+```
+
+Run CI mode:
+
+```
+acr-push-tui run --ci --acr <name> --rg <group> --repo <repo> --tag <tag> --dockerfile <path> --context <dir>
+```
+
+## Environment Variables
+
+See `.env.example` for supported variables.
+
+## Documentation
+
+Detailed usage is in `docs/usage.md`.

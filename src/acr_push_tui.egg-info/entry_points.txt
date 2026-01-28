@@ -1,0 +1,2 @@
+[console_scripts]
+acr-push-tui = acr_push_tui.cli:main

@@ -1,0 +1,37 @@
+[project]
+name = "acr-push-tui"
+version = "0.1.0"
+description = "Textual TUI for building and pushing Docker images to Azure Container Registry."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic-settings==2.2.1",
+  "rich==13.7.1",
+  "textual==0.59.0",
+  "typer==0.12.3",
+]
+
+[project.scripts]
+acr-push-tui = "acr_push_tui.cli:main"
+
+[build-system]
+requires = ["setuptools==69.5.1"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-q"]
+
+[dependency-groups]
+dev = ["pytest==8.2.2", "ruff==0.5.7", "mypy==1.11.1"]
